@@ -1,0 +1,82 @@
+.formBox {
+    width: 96vw;
+    height: 142vh;
+    padding-left: 6vw;
+}
+.bgImg {
+    width: 85vw;
+    opacity: 0.3;
+}
+.form {
+    position: absolute;
+    top: 10vw;
+    margin-left: 10vw;
+    display: flex;
+    flex-direction: column;
+}
+#name, #number, #email {
+    margin: 10px 0px;
+    padding: 0px 6px;
+    height: 28px;
+    border-color: orange;
+    border-radius: 5px;
+    width: 700px;
+    font-size: larger;
+}
+#message {
+    font-size: larger;
+    padding: 10px;
+    border-color: orange;
+    border-radius: 5px;
+    height: 250px;
+    margin-bottom: 10px;
+}
+#submitBtn {
+    width: 100px;
+    font-size: large;
+    border-radius: 10px;
+    background-color: white;
+}
+#submitBtn:hover {
+    cursor: pointer;
+    background-color: orange;
+}
+footer {
+    background: orange;
+}
+footer span {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-left: 30vw;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+h1 {
+    color: orange;
+}
+
+@media screen and (max-width: 800px){
+    .formBox {
+        margin-top: 10vh;
+    }
+    .form {
+        top: 80px;
+        margin-top: 10vh;
+    }
+
+    .bgImg {
+        margin-top: 10px;
+    }
+    #name, #number, #email {
+        height: 27px;
+        width: 60vw;
+    }
+    #message {
+        height: 60px;
+    }
+
+    /* footer span{
+        margin-left: -90px;
+        font-size: medium;
+    } */
+}

@@ -1,0 +1,70 @@
+@media screen and (max-width: 800px) {
+    nav {
+        width: auto;
+        padding-left: 2vw;
+        height: 8vh;
+        box-shadow: 0 0 1px 1px rgba(29, 17, 51, .04), 0 0 3px 2px rgba(9, 32, 77, .12), 0 0 2px -3px rgba(29, 17, 51, .12);
+
+    }
+
+    nav hr {
+        opacity: 0;
+    }
+
+    #menu {
+        /* background-color: yellow; */
+        opacity: 0;
+    }
+
+    #menu ul {
+        position: absolute;
+        background-color: black;
+        right: 2vw;
+        top: 8vh;
+        border: 2px solid #ffa500;
+        border-radius: 26px;
+        display: grid;
+        grid-template-columns: repeat(4, 24vw);
+    }
+
+
+}
+
+nav .right {
+    background-color: white;
+}
+
+/* .right img {
+        opacity: 1;
+        
+    } */
+#menu-btn {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.right input {
+    opacity: 0;
+}
+
+.right button {
+    opacity: 0;
+    width: 8vw;
+    margin-left: 1px;
+    padding: 3px;
+    font-size: x-small;
+}
+
+#exit-btn {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 0vh;
+    right: 15vw;
+}
+
+#search {
+    width: 18vw;
+}
+
+}

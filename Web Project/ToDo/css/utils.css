@@ -1,0 +1,42 @@
+* {
+    margin : 0;
+    padding: 0;
+}
+
+nav {
+    width: 36vw;
+    margin-left: 35vw;
+    /* height: 10vh; */
+    /* background-color: aquamarine; */
+    border: 1px solid black;
+    border-bottom-style: hidden;
+}
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+}
+
+
+.left {
+    padding-left: 1vw;
+}
+
+/* #AddBtn, #ToolBtn, #ExitBtn {
+    font-size: xx-large;
+    font-weight: bolder;
+
+} */
+
+#AddBtn, #ToolBtn, #ExitBtn {
+    width: 40px;
+    padding-top: 4px;
+}
+
+.right {
+    padding-left: 25vw;
+}
+
+/* #ToolBtn {
+    padding-right: 1vw;
+} */

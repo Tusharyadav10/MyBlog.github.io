@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./css/utils.css">
+    <link rel="stylesheet" href="./css/StPage.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="left">
+                <div><a href="./Page.html"><img id="AddBtn" src="./img/add.png" alt="Add Notes"></a> </div>
+            </li>
+            <li class="right">
+                <span ><img id="ToolBtn" src="./img/sett.png" alt="Settings"></span>
+                <span ><a href="./Note.html"><img id="ExitBtn" src="./img/exit.png" alt="Close"></a></span>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="MainBox">
+        <hr>
+        <div class="title">
+            <!-- <h1>Note title</h1> -->
+            <input type="text" name="title" id="title" placeholder="Note title">
+        </div>
+        
+        <div class="content">
+            <textarea name="note-content" id="note_content" cols="30" rows="10"></textarea>
+        </div>
+        <hr>
+        <div class="tools">
+            <ul>
+                <li id="BoldBtn">B</li>
+                <li id="ItalicBtn">I</li>
+                <li id="UnderlineBtn"><u>U</u></li>
+                <li id="StrikeBtn">ab</li>
+                <li id="BulletBtn">o</li>
+                <li id="imgBtn">img</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let bold = document.getElementById("BoldBtn");
+        let itBtn = document.getElementById("ItalicBtn");
+        
+        let bolgIt = bold.addEventListener("click", () => {
+            document.getElementById("note_content").style = "font-weight: bold;"
+        })
+
+        let italicIt = itBtn.addEventListener("click", () => {
+            document.getElementById("note_content").style = "font-style: italic;"
+        })
+    </script>
+    
+</body>
+</html>

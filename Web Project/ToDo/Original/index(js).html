@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background: black;
+            color: white;
+            width: 100vw;
+            height: 6vh;
+        }
+        nav ul{
+            display: flex;
+            list-style-type: none;
+            margin: auto;
+            justify-content: center;
+        }
+        nav ul li {
+           margin: 10px;
+           font-size: larger; 
+            cursor: pointer;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .container {
+            /* margin : 5px 2px 2px 10px; */
+            display: flex;
+            width: 100vw;
+        }
+        .textAreaBox {
+            padding: 5px 2px 2px 10px;
+            width: 26vw;
+        }
+        textarea {
+            margin: 2px;
+            padding: 20px;
+            font-size: xx-large;
+            width: 24vw;
+            height: 20vw;
+            border: 3px solid #ff8100;
+            border-radius: 26px;
+        }
+        .notes {
+            border: 0.4px solid grey;
+            border-radius: 5px;
+        }
+
+        .buttons {
+            /* float: right; */
+            
+            width: 30vw;
+        }
+        .buttons button {
+                padding: 8px;
+                border: 4px solid deepskyblue;
+                background-color: #c2e9f5;
+                border-radius: 14px;
+                cursor: pointer;
+        }
+
+    </style>
+
+</head>
+<body style="color:#3f00ff">
+    <nav>
+        <ul>
+            <a href=""><li class="brand">Tushar</li></a>
+            <a href=""><li>Home</li></a>
+            <a href=""><li>About Us</li></a>
+        </ul>
+    </nav>
+    <br>
+    <div class="container">
+        <div class="textAreaBox">
+            <h1 style="color:#9c4adb">Type your new note here:</h1>
+            <textarea id="textAreaId"></textarea>
+        </div>
+        
+        <div class="buttons">
+            <button id="add">Add</button>
+            <button id="edit">Edit</button>
+            <button id="remove">Remove</button>
+            <span>No of  word: <div id="wordCount">0</div></span>
+        </div>
+
+        <div class="notesArea">
+            <h1>Your notes will appear here:</h1>
+            <div id="notes">
+                Your note
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var count = 0;
+        localStorage.notes =  "";
+
+        let removeBtn = document.getElementById("remove");
+        let addBtn = document.getElementById("add");
+        let textArea = document.getElementById("textAreaId");
+
+        let add = addBtn.addEventListener("click", () => {
+            localStorage.notes = localStorage.notes + document.getElementById("textAreaId").value;
+            document.getElementById("notes").innerHTML = localStorage.notes;
+        })
+
+        let counting = textArea.addEventListener("input", () => {
+            count++;
+            document.getElementById("wordCount").innerHTML = count;
+        })
+
+        let remove = removeBtn.addEventListener("click", () => {
+            document.getElementById("notes").innerHTML = "Your notes";
+        })
+
+
+    </script>
+</body>
+</html>

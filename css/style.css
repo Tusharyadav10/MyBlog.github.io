@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.container {
+    width: 78%;
+    margin-left: 185px;
+}
+
+
+.introBox {
+
+    display: flex;
+
+}
+
+.introBox .left {
+    width: 74%;
+    padding-top: 28px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.introBox .right {
+    float: right;
+}
+
+.introBox .right img {
+    width: 350px;
+}
+
+.brandName img {
+    width: 60vw;
+    height: 80vh;
+    border-radius: 20px;
+}
+
+.brandName h1 {
+    color: lime;
+    position: absolute;
+    width: 40vw;
+    top: 25vh;
+    left: 22vw;
+}
+
+.aboutMe {
+    color: black;
+    font-size: 30px;
+    margin-top: 5vh;
+    text-align: center;
+}
+.aboutMe h1{
+    padding-bottom: 2vw;
+}
+
+.projects {
+    /* background: cyan; */
+    height: 500px;
+    padding-left: 15px;
+}
+
+.projects h1,
+h3 {
+    font-family: "Roboto", sans-serif;
+    font-size: x-large;
+    color: black;
+}
+.projects h1 {
+    font-size: 60px;
+    padding-bottom: 30px;
+    padding-left: 20vw;
+}
+
+.list {
+    display: grid;
+    grid-template-rows: repeat(2, 195px);
+    grid-template-columns: repeat(3, 24vw);
+
+}
+
+.item1 img {
+    width: 100px;
+    margin: 10px;
+    border-radius: 74px;
+}
+
+.experience {
+    /* background: cyan; */
+    display: flex;
+    flex-direction: column;
+}
+
+.work,
+.edu {
+    margin: 20px;
+    width: 50vw;
+
+}
+
+.edu span {
+    color: black;
+    font-size: larger;
+}
+
+.skill h1 {
+    font-size: 60px;
+    padding-bottom: 30px;
+    padding-left: 25vw;
+}
+
+.table {
+    display: grid;
+    grid-template-columns: repeat(3, 110px);
+    grid-template-rows: repeat(5, 40px);
+}
+
+.table div {
+    border: 1px solid;
+    margin: auto;
+    padding: 3px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 20px;
+    width: 98px;
+    font-weight: bold;
+    /* background-color: #ffa5009c; */
+    color: black;
+    border-color: black;
+}
+
+hr {
+    margin: 10px 0px;
+    width: 42vw;
+}
+
+
+@media screen and (max-width: 800px) {
+
+    .container {
+        width: 98vw;
+        margin-left: 0;
+        /* background-color:aquamarine; */
+    }
+    .brandName img {
+        width: 92vw;
+    }
+    .brandName h1 {
+        width: 70vw;
+        top: 18vh;
+        left: 16vw;
+        text-align: center;
+        font-size: 52px;
+    }
+
+    .aboutMe {
+        width: 95vw;
+    }
+
+    .aboutMe h1{
+        padding-bottom: 2vw;
+    }
+
+    .work {
+        margin-left: 4vw;
+        margin-top: 178px;
+    }
+
+    .edu {
+        margin-left: 4vw;
+
+    }
+
+    .work,
+    .edu {
+        padding-left: 5vw;
+        width: 90vw;
+    }
+
+    .skill {
+        /* right: 0px;
+        left: 4vw; */
+        padding-left: 6vw;
+    }
+
+    .skill h1 {
+        font-size: 60px;
+        padding-bottom: 30px;
+        padding-left: 25vw;
+    }
+
+    .skill .table {
+        grid-template-columns: repeat(2, 40vw);
+        grid-template-rows: repeat(5, 10vh);
+        font-size: xx-large;
+    }
+
+    .skill .table div {
+        padding: 10px;
+        width: auto;
+    }
+
+    .projects {
+        margin-top: 10vh;
+        margin-left: 4vw;
+        padding-left: 5vw;
+    }
+
+    .projects h1 {
+        font-size: 60px;
+        padding-bottom: 30px;
+        padding-left: 12vw;
+    }
+
+    .list {
+        grid-template-columns: repeat(2, 45vw);
+    }
+
+    .item1 img {
+        width: 120px;
+    }
+
+    .introBox {
+        margin-left: 4vw;
+    }
+
+}

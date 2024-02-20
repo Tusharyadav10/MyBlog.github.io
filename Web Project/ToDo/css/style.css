@@ -1,0 +1,49 @@
+* {
+    margin : 0;
+    padding: 0;
+}
+
+.MainBox {
+    margin-left: 35vw ;
+    padding-left: 1vw;
+    padding-bottom: 1vw;
+    width: 35vw;
+    height: 80vh;
+    /* background-color: antiquewhite; */
+    border: 1px solid black;
+    border-top-style: hidden;
+}
+
+.Search {
+    margin: 5px 0px;
+}
+
+#SrhBar {
+    width: 90%;
+    height: 35px;
+    border: 1px hidden;
+    padding: 0px 10px;
+    font-size: large;
+    background-color: rgb(196 196 196 / 42%);
+
+}
+
+.Bar img {
+    width: 16px;
+    position: relative;
+    right: 2vw;
+}
+
+.History {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2vw;
+}
+
+.History div {
+    padding: 3px 14px;
+    background-color: #00fff37a;
+    margin-top: 6px;
+    font-size: medium;
+}
+
