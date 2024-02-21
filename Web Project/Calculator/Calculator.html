@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Calculator</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            height: 10vh;
+            background-color: black;
+            color: white;
+        }
+        nav ul{
+            padding-top: 10px;
+            list-style-type: none;
+            justify-content: center;
+            display: flex;
+        }
+        nav ul li {
+            padding: 0px 10px;
+            font-size: larger;
+        }
+
+        .container {
+            margin: auto;
+            margin-top: 18px;
+            padding: 2%;
+            border: 1px solid #ebebeb;
+            width: 40vw;
+            height: 70vh;
+        }
+        .container :hover {
+            border-top-color: #343536;
+        }
+        .displayBox{
+            margin-bottom: 12px;
+            width: 100%;
+            height: 15%;
+            border: 1px solid #ebebeb;
+            border-top-color: #dadce0;
+            border-radius: 10px;
+            overflow: hidden;
+            /* position: relative;
+            float: left; */
+        }
+
+        #inputBox {
+            height: 60%;
+            padding: 8px 0px;
+            /* border: 1px solid blue; */
+            display: grid;
+            grid-template-rows: repeat(5, 27%);
+            grid-template-columns: repeat(4, 27%);
+        }
+        
+
+        #inputBox div{
+            margin: auto;
+            padding: 8% 25%;
+            cursor: pointer;
+            background-color:#dadce0;
+            color:  #202124;
+            border: 1px solid #dadce0;
+            border-radius: 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 90vw;
+            }
+        }
+        
+
+    </style>
+    
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="brand">
+                CALCULATOR
+            </li>
+            <li>Home</li>
+            <li>About Us</li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="displayBox">
+            <div id="result" style="float: right; padding-right: 3%; padding-top: 2%; font-size:xx-large;">0</div>
+        </div>
+        <div id="inputBox">
+
+                <div class="box r-1 c-1">CE</div>
+                <div class="box r-1 c-2">C</div>
+                <div class="box r-1 c-3">1/x</div>
+                <div class="box r-1 c-4">/</div>
+
+                <div class="box r-2 c-1">7</div>
+                <div class="box r-2 c-2">8</div>
+                <div class="box r-2 c-3">9</div>
+                <div class="box r-2 c-4">X</div>
+
+                <div class="box r-3 c-1">4</div>
+                <div class="box r-3 c-2">5</div>
+                <div class="box r-3 c-3">6</div>
+                <div class="box r-3 c-4">-</div>
+
+                <div class="box r-4 c-1">1</div>
+                <div class="box r-4 c-2">2</div>
+                <div class="box r-4 c-3">3</div>
+                <div class="box r-4 c-4">+</div>
+
+                <div class="box r-5 c-1"><sup>+</sup>/<sub>-</sub></div>
+                <div class="box r-5 c-2">0</div>
+                <div class="box r-5 c-3">.</div>
+                <div class="box r-5 c-4" style="background-color: #4285f4; color: #fff;" >=</div>
+
+        </div>
+    </div>
+    <script src="index.js"></script>
+
+</body>
+</html>
