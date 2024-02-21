@@ -27,44 +27,42 @@
         grid-template-columns: repeat(4, 24vw);
     }
 
+    nav .right {
+        background-color: white;
+        opacity: 1;
+    }
 
-}
-
-nav .right {
-    background-color: white;
-}
-
-/* .right img {
+    /* .right img {
         opacity: 1;
         
     } */
-#menu-btn {
-    opacity: 1;
-    cursor: pointer;
-}
+    #menu-btn {
+        opacity: 1;
+        cursor: pointer;
+    }
 
-.right input {
-    opacity: 0;
-}
+    .right input {
+        opacity: 0;
+    }
 
-.right button {
-    opacity: 0;
-    width: 8vw;
-    margin-left: 1px;
-    padding: 3px;
-    font-size: x-small;
-}
+    .right button {
+        opacity: 0;
+        width: 8vw;
+        margin-left: 1px;
+        padding: 3px;
+        font-size: x-small;
+    }
 
-#exit-btn {
-    opacity: 0;
-    cursor: pointer;
-    position: absolute;
-    top: 0vh;
-    right: 15vw;
-}
+    #exit-btn {
+        opacity: 0;
+        cursor: pointer;
+        position: absolute;
+        top: 0vh;
+        right: 15vw;
+    }
 
-#search {
-    width: 18vw;
-}
+    #search {
+        width: 18vw;
+    }
 
 }

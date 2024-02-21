@@ -79,6 +79,7 @@ nav .right {
   width: min-content;
   height: 5vh;
   border-radius: 30px;
+  opacity: 0;
 }
 
 nav .right img {
