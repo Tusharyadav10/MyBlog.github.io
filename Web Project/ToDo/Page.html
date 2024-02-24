@@ -1,58 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="./css/utils.css">
-    <link rel="stylesheet" href="./css/StPage.css">
-    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskC</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav>
-        <ul>
-            <li class="left">
-                <div><a href="./Page.html"><img id="AddBtn" src="./img/add.png" alt="Add Notes"></a> </div>
-            </li>
-            <li class="right">
-                <span ><img id="ToolBtn" src="./img/sett.png" alt="Settings"></span>
-                <span ><a href="./Note.html"><img id="ExitBtn" src="./img/exit.png" alt="Close"></a></span>
-            </li>
+        <div class="brandName">
+            TaskC
+        </div>
+        <ul class="navbarLinks">
+            <li>Home</li>
+            <li>Your Tasks</li>
         </ul>
     </nav>
 
-    <div class="MainBox">
-        <hr>
-        <div class="title">
-            <!-- <h1>Note title</h1> -->
-            <input type="text" name="title" id="title" placeholder="Note title">
+    <hr>
+
+
+
+    <div class="container">
+        <h1 class="brandHeading">TaskC - Manage your todos at one place</h1>
+
+        <div class="label">
+            <h2>Add a Todo</h2>
         </div>
-        
-        <div class="content">
-            <textarea name="note-content" id="note_content" cols="30" rows="10"></textarea>
+
+        <div class="addBox">
+            <input type="text" name="todoText" id="todoText">
+            <button onclick="handleAdd();" id="saveBtn">Save</button>
         </div>
+
+        <!-- <div class="status">
+            <input type="checkbox" name="showFin" id="showFin">
+            Show Finished
+        </div> -->
+
         <hr>
-        <div class="tools">
-            <ul>
-                <li id="BoldBtn">B</li>
-                <li id="ItalicBtn">I</li>
-                <li id="UnderlineBtn"><u>U</u></li>
-                <li id="StrikeBtn">ab</li>
-                <li id="BulletBtn">o</li>
-                <li id="imgBtn">img</li>
-            </ul>
+
+        <div class="savedTodo" id="savedTodo">
+            <h1>Your Todos</h1>
+
+            <div id="item">
+                <input type="checkbox" name="checked" id="checked" onclick="handleCheck();">
+                <span class="savedText">
+                You have no saved notes!
+                </span>
+                <button id="finish" onclick="handleFinish(this.id)">Finished</button>
+                <button id="Task" onclick="handleDelete(this.id);">Delete</button>
+            </div>
+            
         </div>
     </div>
 
     <script>
-        let bold = document.getElementById("BoldBtn");
-        let itBtn = document.getElementById("ItalicBtn");
-        
-        let bolgIt = bold.addEventListener("click", () => {
-            document.getElementById("note_content").style = "font-weight: bold;"
-        })
+        console.log("Welcome to TaskC!");
 
-        let italicIt = itBtn.addEventListener("click", () => {
-            document.getElementById("note_content").style = "font-style: italic;"
-        })
+        let count = 0;
+        let savedTodo = document.getElementById("savedTodo");
+        let todoText = document.getElementById("todoText");
+        let savedText = document.getElementsByClassName("savedText");
+
+        function showTasks() {
+            let innerHtmlText = "<h1>Your Todos</h1>\n";
+
+            for (let i = 1; i <= count; i++) {
+                let id = i.toString();
+                let key = "Task"+id;
+
+                let newTaskBox1 = '<div id="Task">\
+                    <input type="checkbox" name="checked" id="checked'+ id + '" onclick="handleCheck();">';
+                
+                let taskBox = '\n<span class="savedText">' + localStorage.getItem(key) + '</span>\n';
+ 
+                let newTaskBox3 = '<button id="finish' + i.id + '" onclick="handleFinish(this.id);">Finished</button>\
+                <button id="Task' + i.id + '" onclick="handleDelete(this.id);">Delete</button>\
+                </div>';
+
+                innerHtmlText += newTaskBox1 + taskBox + newTaskBox3;   
+            }
+            savedTodo.innerHTML = innerHtmlText;
+        }
+
+        function handleAdd() {
+            count += 1;
+
+            let task = todoText.value;
+            let key = "Task"+count.toString();
+
+            localStorage.setItem(key, task);
+            showTasks();
+        }
+
+        function handleDelete(taskId) {
+            let task = localStorage.getItem("Task"+count.toString());
+
+            localStorage.setItem(taskId, task);
+            localStorage.removeItem(count);
+            count -= 1;
+
+            showTasks();
+        }
+
+        function handleCheck() {
+            let innerHtmlText = "<h1>Your Todos</h1>\n";
+
+            for (let i = 1; i <= count; i++) {
+                let id = i.toString();
+                let key = "Task"+id;
+                let checkBox = document.getElementById("checked"+id);
+                let taskBox = "";
+                let newTaskBox1 = "";
+                
+                if (checkBox.checked) {
+                    newTaskBox1 += '<div id="Task">\
+                    <input type="checkbox" name="checked" id="checked'+ id + '" onclick="handleCheck();"  checked>';
+                    taskBox += '\n<span class="savedText" style="text-decoration: line-through;">' + localStorage.getItem(key) + '</span>\n';
+                }
+                else {
+                    newTaskBox1 += '<div id="Task">\
+                    <input type="checkbox" name="checked" id="checked'+ id + '" onclick="handleCheck();">';
+                    taskBox += '\n<span class="savedText">' + localStorage.getItem(key) + '</span>\n';
+                }
+ 
+                let newTaskBox3 = '<button id="finish' + i.id + '" onclick="handleFinish(this.id);">Finished</button>\
+                <button id="Task' + i.id + '" onclick="handleDelete(this.id);">Delete</button>\
+                </div>';
+
+                innerHtmlText += newTaskBox1 + taskBox + newTaskBox3;   
+            }
+            savedTodo.innerHTML = innerHtmlText;
+            
+        }
+
+        // function handleFinish(taskId) {
+        //     pass;
+        // }
+
+
+
     </script>
-    
+
 </body>
 </html>

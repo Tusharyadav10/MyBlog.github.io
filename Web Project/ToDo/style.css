@@ -1,0 +1,93 @@
+:root {
+    --mry: 10px;
+    --fsize: large;
+}
+
+nav {
+    margin: 10px auto;
+    padding: 5px 20px;
+    width: fit-content;
+    height: 50px;
+    display: flex;
+    background-color: blue;
+    color: white;
+    border-radius: 25px;
+}
+nav .brandName {
+    /* margin-left: 20vw; */
+    margin-top: var(--mry);
+    width: fit-content;
+    font-size: var(--fsize);
+}
+nav ul {
+    margin-left: 25vw;
+    padding: 0;
+    margin-top: var(--mry);
+    list-style-type: none;
+    display: flex;
+    font-size: var(--fsize);
+}
+nav ul li {
+    padding-left: 2vw;
+}
+
+
+
+
+.container {
+    margin: 10px auto;
+    padding: 25px;
+    width: 45%;
+    background-color: lightskyblue;
+    border-radius: 15px;
+}
+
+.brandHeading {
+    margin: 10px auto;
+    width: fit-content;
+}
+
+.label {
+    margin: 10px;
+}
+
+.addBox {
+    margin: 10px auto;
+    width: 80%;
+}
+#todoText {
+    margin: 10px;
+    padding-left: 10px;
+    width: 80%;
+    height: 30px;
+    border-radius: 18px;
+}
+#saveBtn {
+    margin: 10px auto;
+}
+
+.status {
+    margin: 10px;
+}
+
+.savedTodo {
+    margin: 10px;
+}
+.savedTodo button {
+    margin-top: 10px;
+}
+.savedText {
+    margin-right: 100px;
+    overflow-wrap: anywhere;
+    font-family: cursive;
+}
+
+
+@media screen and (max-width: 800px) {
+    .container {
+        width: 80%;
+    }
+    .savedText {
+        margin-right: 150px;
+    }
+}
