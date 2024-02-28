@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take note</title>
+    <link rel="stylesheet" href="./css/StPage.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="menuBox">
+            <ul>
+                <li>
+                    <a href="./Page.html">
+                        <img src="./img/note_add.png" alt="Add new note">
+                    </a>
+                </li>
+                <li onclick="colorBar()"><img src="./img/settings.png" alt="Settings"></li>
+                <li>
+                    <a href="./Note.html">
+                        <img src="./img/close.png" alt="">
+                    </a>
+                </li>
+                <li onclick="saveNote();">
+                    <img src="./img/save.png" alt="">
+                </li>
+            </ul>
+        </div>
+        <div class="colorBox" id="colorBox">
+            <div id="color1" style="background-color: yellow;" onclick="changeColor(this.id);"></div>
+            <div id="color2" style="background-color: green;" onclick="changeColor(this.id);"></div>
+            <div id="color3" style="background-color: pink;" onclick="changeColor(this.id);"></div>
+            <div id="color4" style="background-color: violet;" onclick="changeColor(this.id);"></div>
+            <div id="color5" style="background-color: blue;" onclick="changeColor(this.id);"></div>
+            <div id="color6" style="background-color: white;" onclick="changeColor(this.id);"></div>
+            <div id="color7" style="background-color: black;" onclick="changeColor(this.id);"></div>
+        </div>
+        <hr style="margin: 10px 0;">
+
+
+        <div class="content">
+            <textarea name="note-content" id="note_content"></textarea>
+        </div>
+        <hr>
+        <div class="tools">
+            <ul>
+                <li class="btns" id="BoldBtn">B</li>
+                <li class="btns" id="ItalicBtn">I</li>
+                <li class="btns" id="UnderlineBtn"><u>U</u></li>
+                <li class="btns" id="StrikeBtn" style="text-decoration: line-through;">ab</li>
+                <!-- <li id="BulletBtn">o</li>
+                <li id="imgBtn">img</li> -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let bold = document.getElementById("BoldBtn");
+        let itBtn = document.getElementById("ItalicBtn");
+        let unBtn = document.getElementById("UnderlineBtn");
+        let stBtn = document.getElementById("StrikeBtn");
+        let noteText = document.getElementById("note_content");
+        let colorBox = document.getElementById("colorBox");
+        let turnArr = [0, 0, 0, 0];
+
+        let bolgIt = bold.addEventListener("click", () => {
+            if (turnArr[0]) {
+                noteText.style.setProperty("font-weight", "normal");
+                bold.style.setProperty("font-weight", "normal");
+                turnArr[0] = 0;
+            }
+            else {
+                noteText.style.setProperty("font-weight", "bold");
+                bold.style.setProperty("font-weight", "bold");
+                turnArr[0] = 1;
+            }
+            
+        })
+
+        let italicIt = itBtn.addEventListener("click", () => {
+            if (turnArr[1]) {
+                noteText.style.setProperty("font-style", "normal");
+                itBtn.style.setProperty("font-weight", "normal");
+                turnArr[1] = 0;
+            }
+            else {
+                noteText.style.setProperty("font-style", "italic");
+                itBtn.style.setProperty("font-weight", "bold");
+                turnArr[1] = 1;
+            }
+            
+        })
+
+        let UnderlineBtn = unBtn.addEventListener("click", () => {
+            if (turnArr[2]) {
+                noteText.style.setProperty("text-decoration", "none");
+                unBtn.style.setProperty("font-weight", "normal");
+                turnArr[2] = 0;
+            }
+            else {
+                noteText.style.setProperty("text-decoration", "underline");
+                unBtn.style.setProperty("font-weight", "bold");
+                turnArr[2] = 1;
+            }
+        })
+
+        let strikeBtn = stBtn.addEventListener("click", () => {
+            if (turnArr[3]) {
+                noteText.style.setProperty("text-decoration", "none");
+                stBtn.style.setProperty("font-weight", "normal");
+                turnArr[3] = 0;
+            }
+            else {
+                noteText.style.setProperty("text-decoration", "line-through");
+                stBtn.style.setProperty("font-weight", "bold");
+                turnArr[3] = 1;
+            }
+        })
+
+        function saveNote() {
+            localStorage.setItem(noteText.value, noteText.outerHTML);
+            window.alert("Your note is saved!");
+        }
+
+        function colorBar() {
+            colorBox.style.setProperty("opacity", 1);
+            colorBox.style.setProperty("top", "20px");
+        }
+
+        function changeColor(colorId) {
+            noteText.style.setProperty("color", "black");
+            if(colorId == "color1") {
+                noteText.style.setProperty("background-color", "yellow");
+            }
+            else if(colorId == "color2") {
+                noteText.style.setProperty("background-color", "greenyellow");
+            }
+            else if(colorId == "color3") {
+                noteText.style.setProperty("background-color", "pink");
+            }
+            else if(colorId == "color4") {
+                noteText.style.setProperty("background-color", "violet");
+            }
+            else if(colorId == "color5") {
+                noteText.style.setProperty("background-color", "lightblue");
+            }
+            else if(colorId == "color6") {
+                noteText.style.setProperty("background-color", "white");
+            }else {
+                noteText.style.setProperty("background-color", "black");
+                noteText.style.setProperty("color", "white");
+            }
+            colorBox.style.setProperty("opacity", 0);
+            colorBox.style.setProperty("top", "350px");
+        }
+
+    </script>
+
+</body>
+
+</html>

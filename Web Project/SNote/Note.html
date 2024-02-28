@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SN-Dashboard</title>
+
+    <style>
+        .container {
+            margin: 20px auto;
+            padding: 10px;
+            width: 20%;
+            border: 1px solid black;
+            background-color: beige;
+        }
+
+        .menuBox ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .menuBox ul li {
+            padding-right: 1vw;
+        }
+
+        .searchBar {
+            margin: 10px 0px;
+        }
+
+        #searchText {
+            width: 80%;
+            height: 30px;
+            background-color: lightgray;
+            border: 0;
+        }
+
+        .list {
+            margin: 10px 0px;
+        }
+
+        .note {
+            height: 40px;
+        }
+
+        .note {
+            background-color: gold;
+            margin-bottom: 10px;
+            padding: 10px;
+            height: max-content;
+            overflow: auto;
+        }
+
+        @media screen and (max-width: 800px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="menuBox">
+            <ul>
+                <li>
+                    <a href="./Page.html">
+                        <img src="./img/note_add.png" alt="Add new note">
+                    </a>
+                </li>
+                <!-- <li>Setting</li> -->
+                <!-- <li>Exit</li> -->
+            </ul>
+        </div>
+
+        <hr>
+        <h1>Sticky Notes</h1>
+        <hr>
+
+        <!-- <div class="searchBar">
+            <input type="text" name="searchText" id="searchText" placeholder="Search...">
+            <button id="exitSearch">Exit</button>
+            <button id="search">Search</button>
+        </div> -->
+
+        <div class="list" id="list">
+            <div class="note">
+                <div id="note0">No notes saved till now!</div>
+                <div id="textNote0" onclick="delNotes(this.id);">
+                    <img src="./img/delete.png" alt="Delete">
+                </div>
+                <!-- <div class="date">26-02-2021</div>
+                <div class="time">19:42</div> -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        console.log("Welcome to SNotes");
+        let listNote = document.getElementById("list");
+
+        function showNotes() {
+            let count = 0;
+            listNote.innerHTML = '';
+            var values = [],
+                keys = Object.keys(localStorage);
+            i = keys.length;
+
+            while (i--) {
+                values.push(localStorage.getItem(keys[i]));
+                listNote.innerHTML += '<div class="note">\
+                <div class="text"  id="note' + count.toString() + '">' + keys[i] + '</div>\
+                <div id="textNote' + count.toString() + '"  onclick="delNotes(this.id);">\
+                    <img src="./img/delete.png" alt="Delete">\
+                </div></div>'
+                count++;
+            }
+
+            return [keys, values];
+        }
+
+        function delNotes(idNo) {
+            let noteId = "note" + idNo.at(-1);
+            let keyElement = document.getElementById(noteId);
+
+            localStorage.removeItem(keyElement.innerText);
+            showNotes();
+        }
+
+        if (localStorage.length) {
+            showNotes();
+        }
+        else {
+            listNote.innerHTML = '<div class="note">\
+                <div id="note0">No notes saved till now!</div>\
+                <div id="textNote0"  onclick="delNotes(this.id);">\
+                    <img src="./img/delete.png" alt="Delete">\
+                </div>\
+                <!-- <div class="date">26-02-2021</div>\
+                <div class="time">19:42</div> -->\
+            </div>';
+        }
+
+        // let data = showNotes();
+        // console.log(data[0]);
+    </script>
+</body>
+
+</html>
