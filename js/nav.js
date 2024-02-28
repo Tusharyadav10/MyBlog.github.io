@@ -9,6 +9,8 @@ function displayMenuBtn() {
     menuBtn.addEventListener('click', (event) => {
         menuLst.style.opacity = 1;
         menuBtn.style.opacity = 0;
+        menuBtn.style.right = "15vw";
+        exitBtn.style.right = "0vw";
         displayExitBtn();
     });
 }
@@ -19,6 +21,8 @@ function displayExitBtn() {
     exitBtn.addEventListener('click', (event) => {
         menuLst.style.opacity = 0;
         menuBtn.style.opacity = 1;
+        menuBtn.style.right = "0vw";
+        exitBtn.style.right = "15vw";
         displayMenuBtn();
     });
 }

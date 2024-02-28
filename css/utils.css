@@ -75,8 +75,8 @@ nav hr {
 nav .right {
   position: absolute;
   right: 4vw;
-  top: 1vh;
-  width: min-content;
+  top: 10px;
+  width: 50px;
   height: 48px;
   border-radius: 30px;
   opacity: 0;
