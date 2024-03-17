@@ -49,7 +49,7 @@ a {
 .aboutMe {
     color: black;
     font-size: 30px;
-    margin-top: 5vh;
+    margin: 30px auto;
     text-align: center;
 }
 .aboutMe h1{
@@ -112,21 +112,15 @@ h3 {
 
 .table {
     display: grid;
-    grid-template-columns: repeat(3, 110px);
-    grid-template-rows: repeat(5, 40px);
+    grid-template-columns: repeat(3, 180px);
+    grid-template-rows: repeat(3, 180px);
+    width: fit-content;
+    margin-left: 15vw;
 }
 
 .table div {
-    border: 1px solid;
-    margin: auto;
-    padding: 3px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border-radius: 20px;
-    width: 98px;
-    font-weight: bold;
-    /* background-color: #ffa5009c; */
-    color: black;
-    border-color: black;
+    padding: 5px;
+    width: fit-content;
 }
 
 hr {
@@ -180,6 +174,7 @@ hr {
     .skill {
         /* right: 0px;
         left: 4vw; */
+        padding-top: 35px;
         padding-left: 6vw;
     }
 
@@ -190,9 +185,9 @@ hr {
     }
 
     .skill .table {
-        grid-template-columns: repeat(2, 40vw);
-        grid-template-rows: repeat(5, 10vh);
-        font-size: x-large;
+        grid-template-columns: repeat(2, 36vw);
+        grid-template-rows: repeat(4, 118px);
+        margin-left: 6vw;
     }
 
     .skill .table div {
@@ -201,7 +196,6 @@ hr {
     }
 
     .projects {
-        margin-top: 10vh;
         margin-left: 4vw;
         padding-left: 5vw;
     }

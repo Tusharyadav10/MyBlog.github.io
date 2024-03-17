@@ -9,20 +9,38 @@
             margin: 0;
             padding: 0;
         }
-        nav{
-            height: 10vh;
-            background-color: black;
-            color: white;
+        
+        :root {
+            --mry: 10px;
+            --fsize: large;
         }
-        nav ul{
-            padding-top: 10px;
-            list-style-type: none;
-            justify-content: center;
+
+        nav {
+            margin: 10px auto;
+            padding: 5px 20px;
+            width: fit-content;
+            height: 50px;
             display: flex;
+            background-color: blue;
+            color: white;
+            border-radius: 25px;
+        }
+        nav .brandName {
+            /* margin-left: 20vw; */
+            margin-top: var(--mry);
+            width: fit-content;
+            font-size: var(--fsize);
+        }
+        nav ul {
+            margin-left: 25vw;
+            padding: 0;
+            margin-top: var(--mry);
+            list-style-type: none;
+            display: flex;
+            font-size: var(--fsize);
         }
         nav ul li {
-            padding: 0px 10px;
-            font-size: larger;
+            padding-left: 2vw;
         }
 
         .container {
@@ -80,14 +98,15 @@
 </head>
 <body>
     <nav>
-        <ul>
-            <li class="brand">
-                CALCULATOR
-            </li>
+        <div class="brandName">
+            Calculator
+        </div>
+        <ul class="navbarLinks">
             <li>Home</li>
-            <li>About Us</li>
+            <li>About</li>
         </ul>
     </nav>
+
     <div class="container">
         <div class="displayBox">
             <div id="result" style="float: right; padding-right: 3%; padding-top: 2%; font-size:xx-large;">0</div>

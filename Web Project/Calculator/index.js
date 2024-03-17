@@ -13,7 +13,8 @@ function printInput(divElem){
     }
 
     if(divElem.innerHTML=="C"){
-        calculation = calculation.slice(0, -1);
+        const len = calculation.length;
+        calculation = calculation.substring(0, len-1);
         resultPanel.innerText = calculation;
         return;
     }
@@ -31,9 +32,7 @@ function printInput(divElem){
     }
     
     if(divElem.innerHTML=="<sup>+</sup>/<sub>-</sub>"){
-        // var temp = calculation;
-        // calculation = "";
-        // resultPanel.innerText = 0;
+        
         return;
     }
     
